@@ -5,3 +5,12 @@ releases:
     namespace: flux-system
     wait: true
     timeout: 300
+
+  - name: flux-bootstrap
+    chart: ../manifests/
+    namespace: flux-system
+    installed: true
+    needs:
+      - flux-operator
+    wait: true
+    timeout: 300
