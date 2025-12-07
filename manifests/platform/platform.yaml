@@ -1,3 +1,14 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: core-infrastructure
+  namespace: default
+spec:
+  interval: 5m
+  url: https://github.com/kafuu-chino-cafe/core-infrastructure.git
+  ref:
+    branch: master
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -8,7 +19,7 @@ spec:
   targetNamespace: default
   sourceRef:
     kind: GitRepository
-    name: podinfo
+    name: core-infrastructure
   path: "./clusters/main/"
   prune: true
   timeout: 1m
