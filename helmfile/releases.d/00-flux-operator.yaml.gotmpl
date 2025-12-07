@@ -6,11 +6,20 @@ releases:
     wait: true
     timeout: 300
 
-  - name: flux-bootstrap
-    chart: ../../manifests/
+  - name: flux-instance
+    chart: ../../manifests/instance/
     namespace: flux-system
     installed: true
     needs:
       - flux-operator
+    wait: true
+    timeout: 300
+
+  - name: flux-platform
+    chart: ../../manifests/platform/
+    namespace: flux-system
+    installed: true
+    needs:
+      - flux-instance
     wait: true
     timeout: 300
