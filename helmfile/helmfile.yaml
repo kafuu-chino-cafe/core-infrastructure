@@ -1,8 +1,10 @@
+repositories:
+  - name: fluxcd
+    url: ghcr.io/controlplaneio-fluxcd/charts/
+    oci: true
 environments:
   prod:
     values:
       - environments/prod/common-values.yaml
-repositories:
-  - {{.Values.repositories | toYaml | nindent 4}}
 helmfile:
   - releases.d/*.yaml
