@@ -1,0 +1,4 @@
+releases:
+  - name: flux-operator
+    image: fluxcd/flux-operator
+    namespace: flux-system
