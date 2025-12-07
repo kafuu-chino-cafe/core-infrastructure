@@ -1,0 +1,6 @@
+environments:
+  prod:
+    values:
+      - environments/prod/common-values.yaml.gotmpl
+helmfiles:
+  - releases.d/*.yaml.gotmpl
