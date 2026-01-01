@@ -6,4 +6,4 @@ metadata:
 spec:
   type: "oci"
   interval: 5m0s
-  url: oci://chartproxy.container-registry.com/envoyproxy/gateway-helm
+  url: oci://chartproxy.container-registry.com/envoyproxy
